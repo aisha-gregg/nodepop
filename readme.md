@@ -32,3 +32,14 @@
 
 -   value: number
 -   currency: string
+
+### api functionality
+
+- pagination of items
+- tags existentes
+- crear anuncions
+
+
+## developing
+
+1. `brew services start mongodb`
