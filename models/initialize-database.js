@@ -1,16 +1,14 @@
 const connection = require("./connection");
 const resetDatabase = require("./reset-database");
 const Tag = require("./tag").Tag;
-const Ad = require ("./ad");
-const ArticleType = require ("./article-type");
-const Price = require ("./price");
-const Article = require ("./article").Article;
-
+const Ad = require("./ad");
+const ArticleType = require("./article-type");
+const Price = require("./price");
+const Article = require("./article").Article;
 
 connection.on("error", console.error.bind(console, "connection error:"));
 connection.once("open", function() {
   resetDatabase();
-
 
   const work = new Tag({
     id: 1,
@@ -47,7 +45,7 @@ connection.once("open", function() {
       }),
       price: new Price({
         value: 200,
-        currency:"euros"
+        currency: "euros"
       }),
       photo: " hello",
       tags: [mobile, motor]
