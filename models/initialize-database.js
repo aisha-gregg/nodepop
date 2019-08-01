@@ -7,8 +7,8 @@ const Price = require("./price");
 const Article = require("./article").Article;
 
 connection.on("error", console.error.bind(console, "connection error:"));
-connection.once("open", function() {
-  resetDatabase();
+connection.once("open", async function() {
+  await resetDatabase();
 
   const work = new Tag({
     id: 1,
@@ -30,10 +30,10 @@ connection.once("open", function() {
     name: "Mobile"
   });
 
-  work.save();
-  lifestyle.save();
-  motor.save();
-  mobile.save();
+  await work.save();
+  await lifestyle.save();
+  await motor.save();
+  await mobile.save();
 
   const ad = new Ad({
     id: "ID01",
@@ -51,5 +51,5 @@ connection.once("open", function() {
       tags: [mobile, motor]
     })
   });
-  ad.save();
+  await ad.save();
 });

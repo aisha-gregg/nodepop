@@ -43,3 +43,8 @@
 ## developing
 
 1. `brew services start mongodb`
+2. to acess database : mongo
+
+to locate database collections
+
+db.getCollection("ads").find()

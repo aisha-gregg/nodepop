@@ -1,7 +1,15 @@
-const mongoose = require("mongoose");
+const Tag = require("./tag").Tag;
+const Ad = require("./ad");
+const ArticleType = require("./article-type");
+const Price = require("./price");
+const Article = require("./article").Article;
 
-function resetDatabase() {
-  mongoose.connection.db.dropCollection("tags");
+async function resetDatabase() {
+  await Ad.deleteMany({}).then();
+  await Tag.deleteMany({}).then();
+  await ArticleType.deleteMany({}).then();
+  await Price.deleteMany({}).then();
+  await Article.deleteMany({}).then();
 }
 
 module.exports = resetDatabase;
