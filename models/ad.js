@@ -5,6 +5,5 @@ const adSchema = new mongoose.Schema({
   article: articleSchema,
   id: String
 });
-const Ad= mongoose.model("Ad", adSchema);
+const Ad = mongoose.model("Ad", adSchema);
 module.exports = Ad;
-

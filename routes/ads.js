@@ -1,8 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const Ad = require("../models/ad");
 
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get("/", async function(req, res, next) {
+  const results = await Ad.find({}).then();
+  res.send(JSON.stringify(results));
 });
 
 module.exports = router;

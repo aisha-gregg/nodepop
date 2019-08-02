@@ -7,5 +7,19 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <div id="output">
+
+    </div>
   </body>
+  <script>
+  async function load() {
+    const response = await fetch('/ads')
+    const ads = await response.json()
+
+    const output = document.querySelector('#output')
+    output.innerHTML = JSON.stringify(ads[0].article.name)
+  }
+
+  load()
+  </script>
 </html>
