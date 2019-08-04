@@ -2,22 +2,27 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/variables.css' />
+    <link rel='stylesheet' href='/stylesheets/commons.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <div id="output">
+    <p>Welcome to Wallanop</p>
+    <section class = mobile> </section>
+    <div><img src="/images/note6pro.jpeg" alt=""></div>
+    <div><img src="/images/note6pro.jpeg" alt=""></div>
+    <div><img src="/images/note6pro.jpeg" alt=""></div>
 
-    </div>
+    
   </body>
   <script>
   async function load() {
     const response = await fetch('/ads')
     const ads = await response.json()
-
-    const output = document.querySelector('#output')
-    output.innerHTML = JSON.stringify(ads[0].article.name)
+    
+    // const output = document.querySelector('#output')
+    // output.innerHTML = JSON.stringify(ads[0].article.name)
   }
 
   load()
