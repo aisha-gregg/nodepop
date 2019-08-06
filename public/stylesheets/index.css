@@ -1,8 +1,10 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.mobile-ads {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-a {
-  color: #00B7FF;
+.product-info {
+  border: 1px solid var(--border-colour);
+  padding: var(--base);
 }

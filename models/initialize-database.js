@@ -35,11 +35,12 @@ connection.once("open", async function() {
   await motor.save();
   await mobile.save();
 
-  const ad = new Ad({
+  const ad1 = new Ad({
     id: "ID01",
     article: new Article({
       id: "ARID01",
-      name: "New camera",
+      name: "Note 6 Pro",
+      description: "lorem ipsum",
       type: new ArticleType({
         id: 1
       }),
@@ -51,5 +52,62 @@ connection.once("open", async function() {
       tags: [mobile, motor]
     })
   });
-  await ad.save();
+  await ad1.save();
+
+  const ad2 = new Ad({
+    id: "ID02",
+    article: new Article({
+      id: "ARID02",
+      name: "Note ",
+      description: "lorem ipsum",
+      type: new ArticleType({
+        id: 2
+      }),
+      price: new Price({
+        value: 100,
+        currency: "euros"
+      }),
+      photo: " hello",
+      tags: [mobile, motor]
+    })
+  });
+  await ad2.save();
+
+  const ad3 = new Ad({
+    id: "ID03",
+    article: new Article({
+      id: "ARID03",
+      name: "Note ",
+      description: "lorem ipsum",
+      type: new ArticleType({
+        id: 3
+      }),
+      price: new Price({
+        value: 100,
+        currency: "euros"
+      }),
+      photo: " hello",
+      tags: [mobile, motor]
+    })
+  });
+  await ad3.save();
+
+  const ad4 = new Ad({
+    id: "ID04",
+    article: new Article({
+      id: "ARID04",
+      name: "Note ",
+      description: "lorem ipsum",
+      type: new ArticleType({
+        id: 3
+      }),
+      price: new Price({
+        value: 100,
+        currency: "euros"
+      }),
+      photo: " hello",
+      tags: [mobile, motor]
+    })
+  });
+  await ad4.save();
 });
