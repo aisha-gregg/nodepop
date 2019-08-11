@@ -9,20 +9,42 @@ body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: azure;
 }
 
+h2 {
+  font-family: Arial, Helvetica, sans-serif, "Lucida Sans Regular";
+  font-size: 20px;
+  font-style: initial;
+  text-align: center;
+}
+
+.search {
+  align-items: right;
+}
+
+.search-bar {
+  border-radius: var(--medium);
+  align-content: center;
+}
 .menu {
   background-color: aqua;
+  padding: var(--base);
+  text-align: center;
+  text-transform: uppercase;
+  font-style: oblique;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.menu a {
+  padding: var(--large);
+  display: inline-flex;
+  align-items: center;
 }
 
-img {
+.menu img {
+  width: 40px;
+}
+
+.product-info img {
   width: 100%;
 }

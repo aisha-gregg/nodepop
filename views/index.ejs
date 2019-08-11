@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wallanop</title>
-    <link rel="stylesheet" href="/stylesheets/variables.css" />
-    <link rel="stylesheet" href="/stylesheets/commons.css" />
-    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <title>Nodepop</title>
+    <%- include('css'); -%>
   </head>
   <body>
-    <nav class="menu">
-      <a href="index.html">Motor</a>
-      <a href="index.html">Mobile</a>
-      <a href="index.html">Work</a>
-      <a href="index.html">LIfestyle</a>
-    </nav>
-
-    <p>Welcome to Wallanop</p>
+    <h1>NODEPOP</h1>
+    <div class="search">
+      <input type="text" placeholder="Yo necesito..." class="search-bar" />
+      <button type="submit"></button>
+    </div>
+    <h2>Hoy, ¿qué necesitas?</h2>
+    <%- include('menu'); -%>
+    <p>Mobile</p>
     <!-- <section class="mobile">
+      
       <div><img src="/images/note6pro.jpeg" alt="phone1" /></div>
       <div><img src="/images/note6pro.jpeg" alt="" /></div>
       <div><img src="/images/note6pro.jpeg" alt="" /></div>
@@ -28,14 +27,11 @@
     <section class="mobile-ads">
       <% ads.forEach(function(ad) { %>
       <div class="product-info">
-        <img src="/images/note6pro.jpeg" alt="" />
+        <img src="/images/galaxy s6.jpg" alt="" />
         <span><%= ad.article.name %></span>
         <span><%= ad.article.id %></span>
         <span><%= ad.id %></span>
         <span><%= ad.article.description %></span>
-        <p class="product-description">
-          Se vende en condiciones excelentes.Color:Negro.64GB
-        </p>
       </div>
       <% }); %>
     </section>
