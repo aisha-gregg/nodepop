@@ -13,17 +13,8 @@
     <h2>Hoy, ¿qué necesitas?</h2>
     <%- include('menu'); -%>
     <p>Mobile</p>
-    <!-- <section class="mobile">
-      
-      <div><img src="/images/note6pro.jpeg" alt="phone1" /></div>
-      <div><img src="/images/note6pro.jpeg" alt="" /></div>
-      <div><img src="/images/note6pro.jpeg" alt="" /></div>
-      <div><img src="/images/note6pro.jpeg" alt="" /></div>
-      <div><img src="/images/note6pro.jpeg" alt="phone1" /></div>
-      <div><img src="/images/note6pro.jpeg" alt="" /></div>
-      <div><img src="/images/note6pro.jpeg" alt="" /></div>
-      <div><img src="/images/note6pro.jpeg" alt="" /></div>
-    </section> -->
+    <button id="filter-work">work</button>
+
     <section class="mobile-ads">
       <% ads.forEach(function(ad) { %>
       <div class="product-info">
@@ -35,5 +26,6 @@
       </div>
       <% }); %>
     </section>
+    <script src="/scripts/filters.js"></script>
   </body>
 </html>

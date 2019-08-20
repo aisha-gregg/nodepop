@@ -5,4 +5,4 @@ const priceSchema = new mongoose.Schema({
   currency: String
 });
 const Price = mongoose.model("Price", priceSchema);
-module.exports = Price;
+module.exports = { Price, priceSchema };

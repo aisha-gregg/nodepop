@@ -1,10 +1,51 @@
 <nav class="menu">
   <a href="/motor"
-    ><img src="/images/motor-menu-icon.png" class="img1" alt="" />Motor</a
+    ><img
+      src="/images/motor-menu-icon.png"
+      class="filter"
+      alt=""
+      onclick="filterSelect(motor)"
+    />Motor</a
   >
-  <a href="/mobile"><img src="/images/mobile-menu-icon.png" alt="" />Mobile</a>
-  <a href="/work"><img src="/images/work-menu-icon.png" alt="" />Work</a>
+  <a href="/mobile"
+    ><img
+      src="/images/mobile-menu-icon.png"
+      class="filter"
+      alt=""
+      onclick="filterSelect(mobile)"
+    />Mobile</a
+  >
+  <a href="/work"
+    ><img
+      src="/images/work-menu-icon.png"
+      class="filter"
+      alt=""
+      onclick="filterSelect(work)"
+    />Work</a
+  >
   <a href="/lifestyle"
-    ><img src="/images/lifestyle-menu-icon.png" alt="" />LIfestyle</a
+    ><img
+      src="/images/lifestyle-menu-icon.png"
+      class="filter"
+      alt=""
+      onclick="filterSelect(lifestyle)"
+    />LIfestyle</a
   >
 </nav>
+
+<div class="container">
+  <div class="filterDiv motor">BMW</div>
+  <div class="filterDiv motor">volkswagen</div>
+  <div class="filterDiv motor">Toyota</div>
+  <div class="filterDiv motor">Ibiza</div>
+  <div class="filterDiv mobile">Iphone xs</div>
+  <div class="filterDiv mobile">Xiaomi</div>
+  <div class="filterDiv mobile">Note6pro</div>
+  <div class="filterDiv mobile">Huawei mate 20</div>
+  <div class="filterDiv mobile">galaxy s6</div>
+  <div class="filterDiv mobile">
+    <img src="/images/lgflex3.jpg" alt="" srcset="" />
+  </div>
+  <div class="filterDiv mobile">Note6</div>
+  <div class="filterDiv mobile">Apple Iphonex</div>
+</div>
