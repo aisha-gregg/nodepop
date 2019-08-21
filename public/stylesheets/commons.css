@@ -17,15 +17,16 @@ h2 {
   font-size: 20px;
   font-style: initial;
   text-align: center;
+  padding: 2px;
 }
 
 .search {
-  align-items: right;
+  padding: 2px 900px;
 }
 
 .search-bar {
   border-radius: var(--medium);
-  align-content: center;
+  padding: 7px;
 }
 .menu {
   background-color: aqua;
