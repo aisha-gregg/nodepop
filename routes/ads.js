@@ -18,7 +18,22 @@ router.get("/", async function(req, res) {
   }
 
   const results = await Ad.find(filters).then();
-  res.send(JSON.stringify(results));
+  const formattedResults = results.map(function(ad) {
+    return {
+      id: ad.id,
+      article: {
+        id: ad.article.id,
+        name: ad.article.name,
+        description: ad.article.description,
+        type: ad.article.type,
+        price: ad.article.price,
+        photo: new Buffer(ad.article.photo.photo.data).toString("base64"),
+        tags: ad.article.tags
+      }
+    };
+  });
+
+  res.send(JSON.stringify(formattedResults));
 });
 
 module.exports = router;

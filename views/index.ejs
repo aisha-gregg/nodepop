@@ -15,7 +15,7 @@
     <section class="mobile-ads">
       <% ads.forEach(function(ad) { %>
       <div class="product-info">
-        <img src="/images/galaxy s6.jpg" alt="" />
+        <img src="data:image/jpeg;base64, <%=ad.article.photo %>" />
         <span><%= ad.article.name %></span>
         <span><%= ad.article.id %></span>
         <span><%= ad.id %></span>

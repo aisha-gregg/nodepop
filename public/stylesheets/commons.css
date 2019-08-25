@@ -21,7 +21,9 @@ h2 {
 }
 
 .search {
-  padding: 2px 900px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
 }
 
 .search-bar {

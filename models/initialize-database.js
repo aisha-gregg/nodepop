@@ -2,6 +2,7 @@ const connection = require("./connection");
 const resetDatabase = require("./reset-database");
 const Tag = require("./tag").Tag;
 const Ad = require("./ad");
+const Photo = require("./photo").Photo;
 const ArticleType = require("./article-type").ArticleType;
 const Price = require("./price").Price;
 const Article = require("./article").Article;
@@ -9,6 +10,10 @@ const Article = require("./article").Article;
 connection.on("error", console.error.bind(console, "connection error:"));
 connection.once("open", async function() {
   await resetDatabase();
+
+  const photos = await Photo.find({}).then();
+  const photo1 = photos[0];
+  const photo2 = photos[1];
 
   const price100 = new Price({
     value: 100,
@@ -103,7 +108,7 @@ connection.once("open", async function() {
       description: "Se vende en condiciones excelentes.Color:Negro.64GB.",
       type: buying,
       price: price100,
-      photo: " hello",
+      photo: photo1,
       tags: [mobile]
     })
   });
@@ -117,7 +122,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price300,
-      photo: " hello",
+      photo: photo1,
       tags: [mobile]
     })
   });
@@ -131,7 +136,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GBm",
       type: selling,
       price: price100,
-      photo: " hello",
+      photo: photo1,
       tags: [mobile, lifestyle]
     })
   });
@@ -145,7 +150,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price300,
-      photo: " hello",
+      photo: photo1,
       tags: [work]
     })
   });
@@ -159,7 +164,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price200,
-      photo: " hello",
+      photo: photo1,
       tags: [mobile]
     })
   });
@@ -173,7 +178,7 @@ connection.once("open", async function() {
       description: "Compro nuevo Iphone xs",
       type: selling,
       price: price100,
-      photo: " hello",
+      photo: photo1,
       tags: [mobile]
     })
   });
@@ -188,7 +193,7 @@ connection.once("open", async function() {
         " Se compra en condiciones excelentes.Perfecto para el trabajo.Color:Negro.64GB",
       type: selling,
       price: price200,
-      photo: " hello",
+      photo: photo1,
       tags: [mobile, work]
     })
   });
@@ -202,7 +207,7 @@ connection.once("open", async function() {
       description: " Se compra en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price300,
-      imageUrl: "images/galaxy s6.jpg",
+      photo: photo1,
       tags: [mobile, motor]
     })
   });
@@ -216,7 +221,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price10000,
-      photo: " hello",
+      photo: photo1,
       tags: [motor]
     })
   });
@@ -230,7 +235,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price8000,
-      photo: " hello",
+      photo: photo1,
       tags: [motor, lifestyle]
     })
   });
@@ -244,7 +249,7 @@ connection.once("open", async function() {
       description: " Se compra en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price20000,
-      photo: " hello",
+      photo: photo1,
       tags: [motor, lifestyle]
     })
   });
@@ -258,7 +263,7 @@ connection.once("open", async function() {
       description: " Se compra en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price7000,
-      photo: " hello",
+      photo: photo1,
       tags: [motor]
     })
   });
@@ -272,7 +277,7 @@ connection.once("open", async function() {
       description: " Se compra en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price1000,
-      photo: " hello",
+      photo: photo1,
       tags: [lifestyle, work]
     })
   });
@@ -286,7 +291,7 @@ connection.once("open", async function() {
       description: " Se vende condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price1000,
-      photo: " hello",
+      photo: photo1,
       tags: [lifestyle]
     })
   });
