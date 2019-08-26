@@ -5,24 +5,17 @@
     <%- include('css'); -%>
   </head>
   <body>
-    <h1>NODEPOP</h1>
+    <h1><a href="http://localhost:3000/">NODEPOP</a></h1>
     <div class="search">
       <input type="text" placeholder="Yo necesito..." class="search-bar" />
     </div>
-    <h2>Hoy, ¿qué necesitas?</h2>
+    <div class="h2-container"><h2>Hoy, ¿qué necesitas?</h2></div>
+    <div class="button">Más Barato<input type="range" min="" /> Más Caro</div>
     <%- include('menu'); -%>
-
-    <section class="mobile-ads">
-      <% ads.forEach(function(ad) { %>
-      <div class="product-info">
-        <img src="data:image/jpeg;base64, <%=ad.article.photo %>" />
-        <span><%= ad.article.name %></span>
-        <span><%= ad.article.id %></span>
-        <span><%= ad.id %></span>
-        <span><%= ad.article.description %></span>
-      </div>
-      <% }); %>
-    </section>
-    <script src="/scripts/filters.js"></script>
+    <div class="wrapper">
+      <section class="mobile-ads"></section>
+    </div>
+    <script type="module" src="/scripts/main.js"></script>
+    <script type="module" src="/scripts/filters.js"></script>
   </body>
 </html>

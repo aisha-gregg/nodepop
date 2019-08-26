@@ -14,6 +14,18 @@ connection.once("open", async function() {
   const photos = await Photo.find({}).then();
   const photo1 = photos[0];
   const photo2 = photos[1];
+  const photo3 = photos[2];
+  const photo4 = photos[3];
+  const photo5 = photos[4];
+  const photo6 = photos[5];
+  const photo7 = photos[6];
+  const photo8 = photos[7];
+  const photo9 = photos[8];
+  const photo10 = photos[9];
+  const photo11 = photos[10];
+  const photo12 = photos[11];
+  const photo13 = photos[12];
+  const photo14 = photos[13];
 
   const price100 = new Price({
     value: 100,
@@ -122,7 +134,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price300,
-      photo: photo1,
+      photo: photo2,
       tags: [mobile]
     })
   });
@@ -136,7 +148,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GBm",
       type: selling,
       price: price100,
-      photo: photo1,
+      photo: photo3,
       tags: [mobile, lifestyle]
     })
   });
@@ -150,21 +162,21 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price300,
-      photo: photo1,
+      photo: photo4,
       tags: [work]
     })
   });
   await ad4.save();
 
   const ad5 = new Ad({
-    id: "ID04",
+    id: "ID05",
     article: new Article({
-      id: "ARID04",
+      id: "ARID05",
       name: "Huawei Mate 20",
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price200,
-      photo: photo1,
+      photo: photo5,
       tags: [mobile]
     })
   });
@@ -178,7 +190,7 @@ connection.once("open", async function() {
       description: "Compro nuevo Iphone xs",
       type: selling,
       price: price100,
-      photo: photo1,
+      photo: photo6,
       tags: [mobile]
     })
   });
@@ -193,7 +205,7 @@ connection.once("open", async function() {
         " Se compra en condiciones excelentes.Perfecto para el trabajo.Color:Negro.64GB",
       type: selling,
       price: price200,
-      photo: photo1,
+      photo: photo7,
       tags: [mobile, work]
     })
   });
@@ -207,7 +219,7 @@ connection.once("open", async function() {
       description: " Se compra en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price300,
-      photo: photo1,
+      photo: photo8,
       tags: [mobile, motor]
     })
   });
@@ -221,7 +233,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price10000,
-      photo: photo1,
+      photo: photo9,
       tags: [motor]
     })
   });
@@ -235,7 +247,7 @@ connection.once("open", async function() {
       description: " Se vende en condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price8000,
-      photo: photo1,
+      photo: photo10,
       tags: [motor, lifestyle]
     })
   });
@@ -249,7 +261,7 @@ connection.once("open", async function() {
       description: " Se compra en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price20000,
-      photo: photo1,
+      photo: photo11,
       tags: [motor, lifestyle]
     })
   });
@@ -263,7 +275,7 @@ connection.once("open", async function() {
       description: " Se compra en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price7000,
-      photo: photo1,
+      photo: photo12,
       tags: [motor]
     })
   });
@@ -277,7 +289,7 @@ connection.once("open", async function() {
       description: " Se compra en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price1000,
-      photo: photo1,
+      photo: photo13,
       tags: [lifestyle, work]
     })
   });
@@ -291,7 +303,7 @@ connection.once("open", async function() {
       description: " Se vende condiciones excelentes.Color:Negro.64GB",
       type: selling,
       price: price1000,
-      photo: photo1,
+      photo: photo14,
       tags: [lifestyle]
     })
   });

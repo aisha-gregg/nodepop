@@ -14,13 +14,13 @@ router.get("/", async function(req, res, next) {
 const storage = multer.diskStorage({
   destination: "assets/uploads/",
   filename: function(req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now() + ".png");
+    cb(null, file.fieldname + "-" + Date.now() + ".jpg");
   }
 });
 
 const upload = multer({ storage });
 
-router.post("/photo", upload.single("avatar"), function(req, res) {
+router.post("/photo", upload.single("image"), function(req, res) {
   const newPhoto = new Photo();
   newPhoto.photo.data = fs.readFileSync(req.file.path);
   newPhoto.photo.contentType = "image/jpeg";

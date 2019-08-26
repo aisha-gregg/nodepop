@@ -25,8 +25,8 @@ router.get("/", async function(req, res) {
         id: ad.article.id,
         name: ad.article.name,
         description: ad.article.description,
-        type: ad.article.type,
-        price: ad.article.price,
+        type: ad.article.type.id,
+        price: ad.article.price.value,
         photo: new Buffer(ad.article.photo.photo.data).toString("base64"),
         tags: ad.article.tags
       }
