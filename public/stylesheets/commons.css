@@ -37,10 +37,17 @@ h2 {
   padding: 7px;
 }
 
-.button {
+.buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  background-color: black;
+  color: azure;
 }
+#button1 #button2 #button3 #button4 #button5 #button6 #button7 #button8 {
+  color: azure;
+  border-radius: 10px;
+}
+
 .menu {
   background-color: aqua;
   padding: var(--base);

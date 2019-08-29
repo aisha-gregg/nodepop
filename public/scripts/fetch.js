@@ -1,8 +1,33 @@
-export async function fetchAds(tag) {
+export async function fetchAds(tag, price, minPrice, maxPrice) {
   let url = "http://localhost:3000/ads";
 
+  if (
+    tag !== undefined ||
+    price !== undefined ||
+    minPrice !== undefined ||
+    maxPrice !== undefined
+  ) {
+    url += "?";
+  }
+
   if (tag !== undefined) {
-    url += "?tag=" + tag;
+    url += "tag=" + tag;
+  }
+
+  if (tag !== undefined && price !== undefined) {
+    url += "&";
+  }
+
+  if (price !== undefined) {
+    url += "price=" + price;
+  }
+
+  if (minPrice !== undefined) {
+    url += "minPrice=" + minPrice;
+  }
+
+  if (maxPrice !== undefined) {
+    url += "maxPrice=" + maxPrice;
   }
 
   const response = await fetch(url);
@@ -10,12 +35,14 @@ export async function fetchAds(tag) {
 
   const htmlAds = ads
     .map(function(ad) {
-      let type = "selling";
+      let type = "Se vende";
       if (ad.article.type.id === 1) {
-        type = "selling";
-      } else {
-        type = "buying";
+        type = "Se vende";
       }
+      if (ad.article.type.id === 2) {
+        type = "Se busca";
+      }
+
       return `
       <div class="product-info">
       <img

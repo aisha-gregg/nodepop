@@ -17,6 +17,29 @@ router.get("/", async function(req, res) {
     filters["article.type.id"] = req.query.type;
   }
 
+  if (req.query.price !== undefined) {
+    filters["article.price.value"] = req.query.price;
+  }
+
+  if (req.query.maxPrice !== undefined && req.query.minPrice === undefined) {
+    filters["article.price.value"] = {
+      $lte: req.query.maxPrice
+    };
+  }
+
+  if (req.query.minPrice !== undefined && req.query.maxPrice === undefined) {
+    filters["article.price.value"] = {
+      $gte: req.query.minPrice
+    };
+  }
+
+  if (req.query.maxPrice !== undefined && req.query.minPrice !== undefined) {
+    filters["article.price.value"] = {
+      $lte: req.query.maxPrice,
+      $gte: req.query.minPrice
+    };
+  }
+
   const results = await Ad.find(filters).then();
   const formattedResults = results.map(function(ad) {
     return {
