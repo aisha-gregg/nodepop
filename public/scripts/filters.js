@@ -35,35 +35,45 @@ const searchingFilter = {
   name: "2"
 };
 
-const cheapestPriceFilter = {
-  tag: document.querySelector("#filter-cheapest"),
-  name: "lowest"
+const rangeFilter = {
+  tag: document.querySelector("#filter-range"),
+  minPrice: 50,
+  maxPrice: 100
 };
 
 const overOnehundredFilter = {
   tag: document.querySelector("#filter-over-onehundred"),
-  name: "Over one hundred"
+  minPrice: 100
 };
 
 const minusFiftyfilter = {
   tag: document.querySelector("#filter-less-fifty"),
-  name: "Minus fifty"
+  maxPrice: 50
 };
 
 const exactEurosfilter = {
   tag: document.querySelector("#filter-exact-euros"),
-  name: "100"
+  minPrice: 100,
+  maxPrice: 100
 };
 
 const filterOptions = [
   overOnehundredFilter,
   minusFiftyfilter,
-  exactEurosfilter
+  exactEurosfilter,
+  rangeFilter
 ];
 
 filterOptions.forEach(function(filterOption) {
   filterOption.tag.addEventListener("click", async function() {
-    displayAds(await fetchAds(undefined, filterOption.name));
+    displayAds(
+      await fetchAds(
+        undefined,
+        undefined,
+        filterOption.minPrice,
+        filterOption.maxPrice
+      )
+    );
   });
 });
 
