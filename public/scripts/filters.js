@@ -26,28 +26,18 @@ filters.forEach(function(filter) {
   });
 });
 
-const cheapestFilter = {
-  tag: document.querySelector("#filter-cheapest"),
-  name: "cheapest"
-};
-
-const mostExpensivefilter = {
-  tag: document.querySelector("#filter-most-expensive"),
-  name: "mostExpensive"
-};
-
 const sellingFilter = {
   tag: document.querySelector("#selling"),
-  name: "Selling"
+  name: "1"
 };
 const searchingFilter = {
   tag: document.querySelector("#searching"),
-  name: "Searching"
+  name: "2"
 };
 
 const cheapestPriceFilter = {
-  tag: document.querySelector("#filter-cheapest-prices"),
-  name: "Cheapest Prices"
+  tag: document.querySelector("#filter-cheapest"),
+  name: "lowest"
 };
 
 const overOnehundredFilter = {
@@ -66,11 +56,6 @@ const exactEurosfilter = {
 };
 
 const filterOptions = [
-  cheapestFilter,
-  mostExpensivefilter,
-  sellingFilter,
-  searchingFilter,
-  cheapestPriceFilter,
   overOnehundredFilter,
   minusFiftyfilter,
   exactEurosfilter
@@ -79,5 +64,42 @@ const filterOptions = [
 filterOptions.forEach(function(filterOption) {
   filterOption.tag.addEventListener("click", async function() {
     displayAds(await fetchAds(undefined, filterOption.name));
+  });
+});
+
+const cheapestFilter = {
+  tag: document.querySelector("#filter-cheapest"),
+  name: "lowest"
+};
+
+const mostExpensivefilter = {
+  tag: document.querySelector("#filter-most-expensive"),
+  name: "highest"
+};
+
+const orderBy = [cheapestFilter, mostExpensivefilter];
+
+orderBy.forEach(function(order) {
+  order.tag.addEventListener("click", async function() {
+    displayAds(
+      await fetchAds(undefined, undefined, undefined, undefined, order.name)
+    );
+  });
+});
+
+const typeFilters = [sellingFilter, searchingFilter];
+
+typeFilters.forEach(function(type) {
+  type.tag.addEventListener("click", async function() {
+    displayAds(
+      await fetchAds(
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        type.name
+      )
+    );
   });
 });

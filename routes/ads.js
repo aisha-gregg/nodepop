@@ -56,6 +56,26 @@ router.get("/", async function(req, res) {
     };
   });
 
+  if (req.query.orderBy !== undefined) {
+    if (req.query.orderBy === "lowest") {
+      formattedResults.sort(function(a, b) {
+        if (a.article.price >= b.article.price) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      formattedResults.sort(function(a, b) {
+        if (a.article.price <= b.article.price) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+  }
+
   res.send(JSON.stringify(formattedResults));
 });
 

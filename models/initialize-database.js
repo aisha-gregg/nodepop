@@ -31,7 +31,15 @@ connection.once("open", async function() {
     value: 100,
     currency: "euros"
   });
+  const price45 = new Price({
+    value: 45,
+    currency: "euros"
+  });
 
+  const price50 = new Price({
+    value: 50,
+    currency: "euros"
+  });
   const price200 = new Price({
     value: 200,
     currency: "euros"
@@ -78,6 +86,8 @@ connection.once("open", async function() {
   await selling.save();
   await buying.save();
 
+  await price45.save();
+  await price50.save();
   await price100.save();
   await price200.save();
   await price300.save();
@@ -117,7 +127,7 @@ connection.once("open", async function() {
     article: new Article({
       id: "ARID01",
       name: "Note 6 Pro",
-      description: "Se vende en condiciones excelentes.Color:Negro.64GB.",
+      description: "Se busca en condiciones excelentes.Color:Negro.64GB.",
       type: buying,
       price: price100,
       photo: photo1,
@@ -147,7 +157,7 @@ connection.once("open", async function() {
       name: "galaxy s6 ",
       description: " Se vende en condiciones excelentes.Color:Negro.64GBm",
       type: selling,
-      price: price100,
+      price: price45,
       photo: photo3,
       tags: [mobile, lifestyle]
     })
@@ -159,7 +169,7 @@ connection.once("open", async function() {
     article: new Article({
       id: "ARID04",
       name: "Apple iphone x ",
-      description: " Se vende en condiciones excelentes.Color:Negro.64GB",
+      description: " Se busca en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price300,
       photo: photo4,
@@ -189,7 +199,7 @@ connection.once("open", async function() {
       name: "Iphone xs ",
       description: "Compro nuevo Iphone xs",
       type: selling,
-      price: price100,
+      price: price50,
       photo: photo6,
       tags: [mobile]
     })
@@ -258,7 +268,7 @@ connection.once("open", async function() {
     article: new Article({
       id: "ARID11",
       name: "BMW",
-      description: " Se compra en condiciones excelentes.Color:Negro.64GB",
+      description: " Se busca en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price20000,
       photo: photo11,
@@ -272,7 +282,7 @@ connection.once("open", async function() {
     article: new Article({
       id: "ARID12",
       name: "Ibiza",
-      description: " Se compra en condiciones excelentes.Color:Negro.64GB",
+      description: " Se busca en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price7000,
       photo: photo12,
@@ -286,7 +296,7 @@ connection.once("open", async function() {
     article: new Article({
       id: "ARID13",
       name: "Macboook Air",
-      description: " Se compra en condiciones excelentes.Color:Negro.64GB",
+      description: " Se busca en condiciones excelentes.Color:Negro.64GB",
       type: buying,
       price: price1000,
       photo: photo13,

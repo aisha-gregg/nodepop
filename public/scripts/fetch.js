@@ -1,11 +1,13 @@
-export async function fetchAds(tag, price, minPrice, maxPrice) {
+export async function fetchAds(tag, price, minPrice, maxPrice, orderBy, type) {
   let url = "http://localhost:3000/ads";
 
   if (
     tag !== undefined ||
     price !== undefined ||
     minPrice !== undefined ||
-    maxPrice !== undefined
+    maxPrice !== undefined ||
+    orderBy !== undefined ||
+    type !== undefined
   ) {
     url += "?";
   }
@@ -28,6 +30,10 @@ export async function fetchAds(tag, price, minPrice, maxPrice) {
 
   if (maxPrice !== undefined) {
     url += "maxPrice=" + maxPrice;
+  }
+
+  if (orderBy !== undefined) {
+    url += "orderBy=" + orderBy;
   }
 
   const response = await fetch(url);
