@@ -1,4 +1,11 @@
-export async function fetchAds(tag, price, minPrice, maxPrice, orderBy, type) {
+export async function fetchAds({
+  tag,
+  price,
+  minPrice,
+  maxPrice,
+  orderBy,
+  type
+}) {
   let url = "http://localhost:3000/ads";
   const parameters = [
     { value: tag, queryParam: "tag" },
