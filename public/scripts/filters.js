@@ -68,7 +68,7 @@ filterOptions.forEach(function(filterOption) {
   filterOption.tag.addEventListener("click", async function() {
     displayAds(
       await fetchAds(
-        undefined,
+        window.location.hash.substr(1),
         undefined,
         filterOption.minPrice,
         filterOption.maxPrice
@@ -92,7 +92,13 @@ const orderBy = [cheapestFilter, mostExpensivefilter];
 orderBy.forEach(function(order) {
   order.tag.addEventListener("click", async function() {
     displayAds(
-      await fetchAds(undefined, undefined, undefined, undefined, order.name)
+      await fetchAds(
+        window.location.hash.substr(1),
+        undefined,
+        undefined,
+        undefined,
+        order.name
+      )
     );
   });
 });
@@ -103,7 +109,7 @@ typeFilters.forEach(function(type) {
   type.tag.addEventListener("click", async function() {
     displayAds(
       await fetchAds(
-        undefined,
+        window.location.hash.substr(1),
         undefined,
         undefined,
         undefined,
