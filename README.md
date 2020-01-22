@@ -1,8 +1,8 @@
 # nodepop
 
-url: http://ec2-3-136-161-198.us-east-2.compute.amazonaws.com/
-ip address: http://3.136.161.198/
-static image url: http://ec2-3-136-161-198.us-east-2.compute.amazonaws.com/images/img.jpg
+- url: http://ec2-3-136-161-198.us-east-2.compute.amazonaws.com/
+- ip address: http://3.136.161.198/
+- static image url: http://ec2-3-136-161-198.us-east-2.compute.amazonaws.com/images/img.jpg
 
 In order to restart automatically It was set up with `pm2`:
 
